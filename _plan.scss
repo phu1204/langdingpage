@@ -1,0 +1,150 @@
+.plan{
+    padding-bottom: 55px;
+    padding-top: 40px;
+    &-title{
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    &-list{
+        margin: 45px 0;
+        display: flex;
+        justify-content: space-between;   
+    }
+
+    &-item{
+        width: calc(33.33%-30px);   
+        border: 1px solid $gray-light;
+        border-radius: 14px; 
+        padding: 75px 25px;
+        transition: all 0.2s linear;
+        display : flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &-item:hover{
+        border-color: transparent;
+        box-shadow: 0 0 50px 10px rgba(black,0.03)
+    }
+
+    &-item:hover .plan-start{
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: white;
+    }
+
+    &-label{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 18px 25px;
+        background-color: $pink;
+        border-radius: 0 20px  0 20px;
+        color: #eee;
+        text-transform: capitalize;
+    }
+
+    &-price{
+        margin-bottom: 30px;
+        padding-bottom: 40px;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 1px solid $gray-light;
+    }
+
+    &-symbol{
+        vertical-align: top;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &-month{
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    &-desc{
+        margin-bottom: 35px;
+    }
+
+    &-name{
+        margin-bottom: 25px; 
+        font-size: 22px;
+        font-weight: 500; 
+    }
+
+
+    &-feature-item{
+        display: flex;
+        align-items: center;
+        color: $gray-blur;
+        margin-bottom: 25px;
+        font-weight: 300;
+    }
+
+    &-feature-item:last-of-type{
+        margin-bottom: 75px;
+    }
+
+
+    &-feature-icon{
+        margin-right: 10px;
+        
+    }
+
+    &-start{
+        margin: auto auto 0;
+        display: block;
+        width: max-content;
+        transition: all 0.2s linear;
+    }
+
+    @media screen and (max-width: 1023px) {
+        &-list{   
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 450px;
+            grid-auto-flow: column;
+            grid-gap: 0 50px;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+            &{
+            -webkit-scrollbar {
+              display: none;
+              width: 0;
+            }
+            & > *{
+              scroll-snap-align: start;
+            }
+        }
+     }
+
+
+        // &-item{
+        //     width: 60%;
+        //     align-items: center;
+        //     margin: 0 auto;
+        // }
+
+        // &-item:not(:first-child){      
+        //     margin: 30px auto 0;
+        // }
+    }
+
+    @media screen and (max-width: 767px) {
+        &-item{
+            width: 100%;
+        }
+    }
+    
+    
+}
